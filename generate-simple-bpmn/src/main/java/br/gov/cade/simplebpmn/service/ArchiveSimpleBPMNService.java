@@ -1,4 +1,4 @@
-package br.com.ambientelivre.simplebpmn.service;
+package br.gov.cade.simplebpmn.service;
 
 import java.util.logging.Logger;
 

@@ -1,4 +1,4 @@
-package br.com.ambientelivre.generatesimplebpmn;
+package br.gov.cade.generatesimplebpmn;
 
 import java.io.File;
 import java.util.Collection;
@@ -21,7 +21,7 @@ import org.camunda.bpm.model.bpmn.instance.UserTask;
 import org.camunda.bpm.model.xml.instance.DomElement;
 import org.camunda.bpm.model.xml.type.ModelElementType;
 
-import br.com.ambientelivre.simplebpmn.service.ArchiveSimpleBPMNService;
+import br.gov.cade.simplebpmn.service.ArchiveSimpleBPMNService;
 
 import org.junit.Rule;
 import org.junit.Test;
