@@ -12,14 +12,14 @@
     <bpmn:endEvent id="EndEvent" name="End Process">
       <bpmn:incoming>Flow_0jlpu4m</bpmn:incoming>
       <bpmn:incoming>Flow_0gsopd3</bpmn:incoming>
-      <incoming xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL">sequenceFlow_a04eb796-4dd2-43c0-8132-464e8c56f49b</incoming>
+      <incoming xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL">sequenceFlow_7353da01-7562-490a-80f7-9952e63d586e</incoming>
     </bpmn:endEvent>
     <bpmn:sequenceFlow id="Flow_0fhdfc1" sourceRef="TaskTeacher" targetRef="gateway"/>
     <bpmn:parallelGateway gatewayDirection="Unspecified" id="gateway" name="gateway">
       <bpmn:incoming>Flow_0fhdfc1</bpmn:incoming>
       <bpmn:outgoing>Flow_0xbjbpi</bpmn:outgoing>
       <bpmn:outgoing>Flow_0qvnljw</bpmn:outgoing>
-      <outgoing xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL">sequenceFlow_0ea2a15d-a99d-43c7-9674-af3f98dd7421</outgoing>
+      <outgoing xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL">sequenceFlow_38c7c216-4a3e-4f56-abcd-ca289b158fd7</outgoing>
     </bpmn:parallelGateway>
     <bpmn:sequenceFlow id="Flow_0xbjbpi" sourceRef="gateway" targetRef="failedStudentTask"/>
     <bpmn:userTask completionQuantity="1" id="failedStudentTask" implementation="##unspecified" isForCompensation="false" name="Failed student" startQuantity="1">
@@ -34,12 +34,12 @@
       <bpmn:outgoing>Flow_0jlpu4m</bpmn:outgoing>
     </bpmn:userTask>
     <userTask camunda:assignee="demo" id="recoveringStudentTask" name="Recovering student" xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL">
-      <documentation id="documentation_9fda712e-ad39-452e-a460-008af1044638">Students did not get enough grade to pass</documentation>
-      <incoming>sequenceFlow_0ea2a15d-a99d-43c7-9674-af3f98dd7421</incoming>
-      <outgoing>sequenceFlow_a04eb796-4dd2-43c0-8132-464e8c56f49b</outgoing>
+      <documentation id="documentation_0f7fef18-2254-471e-a68f-ee417bd88139">Students did not get enough grade to pass</documentation>
+      <incoming>sequenceFlow_38c7c216-4a3e-4f56-abcd-ca289b158fd7</incoming>
+      <outgoing>sequenceFlow_7353da01-7562-490a-80f7-9952e63d586e</outgoing>
     </userTask>
-    <sequenceFlow id="sequenceFlow_0ea2a15d-a99d-43c7-9674-af3f98dd7421" sourceRef="gateway" targetRef="recoveringStudentTask" xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL"/>
-    <sequenceFlow id="sequenceFlow_a04eb796-4dd2-43c0-8132-464e8c56f49b" sourceRef="recoveringStudentTask" targetRef="EndEvent" xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL"/>
+    <sequenceFlow id="sequenceFlow_38c7c216-4a3e-4f56-abcd-ca289b158fd7" sourceRef="gateway" targetRef="recoveringStudentTask" xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL"/>
+    <sequenceFlow id="sequenceFlow_7353da01-7562-490a-80f7-9952e63d586e" sourceRef="recoveringStudentTask" targetRef="EndEvent" xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL"/>
   </bpmn:process>
   <bpmndi:BPMNDiagram id="BPMNDiagram_1">
     <bpmndi:BPMNPlane bpmnElement="BpmnModelForFluentRead" id="BPMNPlane_1">
@@ -98,15 +98,15 @@
       <bpmndi:BPMNShape bpmnElement="failedStudentTask" id="Activity_0ve6a2o_di">
         <dc:Bounds height="80" width="100" x="560" y="80"/>
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape bpmnElement="recoveringStudentTask" id="BPMNShape_68ad179c-71fb-4f46-b0a1-82a7e8909d53">
+      <bpmndi:BPMNShape bpmnElement="recoveringStudentTask" id="BPMNShape_95c72dc4-3e00-4644-abc8-5cb370e1ccc3">
         <dc:Bounds height="80.0" width="100.0" x="555.0" y="410.0"/>
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNEdge bpmnElement="sequenceFlow_0ea2a15d-a99d-43c7-9674-af3f98dd7421" id="BPMNEdge_01b1f862-fe3a-44eb-ba63-99a7325c562d">
+      <bpmndi:BPMNEdge bpmnElement="sequenceFlow_38c7c216-4a3e-4f56-abcd-ca289b158fd7" id="BPMNEdge_a81e998d-3fa0-4ca3-af27-8edf2adad9a8">
         <di:waypoint x="480.0" y="232.0"/>
         <di:waypoint x="480.0" y="450.0"/>
         <di:waypoint x="555.0" y="450.0"/>
       </bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge bpmnElement="sequenceFlow_a04eb796-4dd2-43c0-8132-464e8c56f49b" id="BPMNEdge_cccd15f8-97af-4fd0-bdce-df05b65f1253">
+      <bpmndi:BPMNEdge bpmnElement="sequenceFlow_7353da01-7562-490a-80f7-9952e63d586e" id="BPMNEdge_8cdb56eb-d184-4601-abeb-77622ba33bb6">
         <di:waypoint x="655.0" y="450.0"/>
         <di:waypoint x="732.0" y="207.0"/>
       </bpmndi:BPMNEdge>
