@@ -34,25 +34,29 @@ public class CreateSimpleBPMNProcessTest {
 	@Test
 	public void testCreateInvoiceProcess() throws Exception {
 
-		BpmnModelInstance modelInstance = Bpmn.readModelFromFile(new File("BPMNModelForFluentRead.bpmn"));
+		
+		
+		
+		///BpmnModelInstance modelInstance = Bpmn.readModelFromFile(new File("BPMNModelForFluentRead.bpmn"));
 
-		ParallelGateway gateway = (ParallelGateway) modelInstance.getModelElementById("gateway");
-		gateway.builder().userTask().name("Recovering student").id("recoveringStudentTask").camundaAssignee("demo")
-				.documentation("Students did not get enough grade to pass").connectTo("EndEvent");
+		///ParallelGateway gateway = (ParallelGateway) modelInstance.getModelElementById("gateway");
+		///gateway.builder().userTask().name("Recovering student").id("recoveringStudentTask").camundaAssignee("demo")
+		///		.documentation("Students did not get enough grade to pass").connectTo("EndEvent");
 
-		UserTask approvedStudentTask = (UserTask) modelInstance.getModelElementById("approvedStudentTask");
-		approvedStudentTask.setName("Recovering Student Task");
+		///UserTask approvedStudentTask = (UserTask) modelInstance.getModelElementById("approvedStudentTask");
+		///approvedStudentTask.setName("Recovering Student Task");
 
 		// View BPMN in System.out
 		//Bpmn.writeModelToStream(System.out, modelInstance);
 
-		File arqXML = new File("BPMNModelForFluentWrite.bpmn");
-		Bpmn.writeModelToFile(arqXML, modelInstance);
+		///File arqXML = new File("BPMNModelForFluentWrite.bpmn");
+		///Bpmn.writeModelToFile(arqXML, modelInstance);
 
 		// ---------------------- Complex to Simple BPMN ----------------------------------------
+		
 		BpmnModelInstance complexModel = Bpmn.readModelFromFile(new File("BPMNModelForFluentComplexRead.bpmn"));
 		BpmnModelInstance simpleModel =  Bpmn.readModelFromFile(new File("BPMNModelForFluentSimpleModelRead.bpmn")); 
-		
+				
 		StartEvent start = complexModel.getModelElementById("StartEvent");
 		Collection<Documentation> docStart = start.getDocumentations();
 		String showStart = docStart.iterator().next().getTextContent();
@@ -64,7 +68,7 @@ public class CreateSimpleBPMNProcessTest {
 		// Init new Simple Process		
 		StartEvent newStart = (StartEvent) simpleModel.getModelElementById("StartEvent");
 		
-		if (showStartTeacher.equalsIgnoreCase("show")) {
+		if (showStartTeacher.equalsIgnoreCase("showSimple")) {
 			newStart.builder().userTask().name("Teacher informs student's grade").id("TaskTeacher").camundaAssignee("demo")
 			.documentation("Teacher informs student's grade");
 
