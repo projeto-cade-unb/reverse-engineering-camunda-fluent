@@ -10,7 +10,10 @@
     <property name="history" value="audit" />
     <property name="databaseSchemaUpdate" value="true" />
    -->
-    
+
+
+<!-- Postgresql -->
+<!--       
     <property name="jdbcUrl" value="jdbc:postgresql://localhost:5432/camunda13" />
     <property name="jdbcDriver" value="org.postgresql.Driver" />
     <property name="jdbcUsername" value="postgres" />
@@ -18,6 +21,16 @@
     
     <property name="databaseSchemaUpdate" value="false" />
      <property name="history" value="full" />
+ -->
+
+<!-- H2 camunda 7.16 -->    
+    <property name="jdbcUrl" value="jdbc:h2:/opt/camundaUso/7.16/camunda-bpm-run-7.16.0/camunda-h2-default/process-engine;TRACE_LEVEL_FILE=0;DB_CLOSE_ON_EXIT=FALSE" />
+    <property name="jdbcDriver" value="org.h2.Driver" />
+    <property name="jdbcUsername" value="sa" />
+    <property name="jdbcPassword" value="sa" />
+    
+    <property name="databaseSchemaUpdate" value="false" />
+    <property name="history" value="full" /> 
     
     <!-- job executor configurations -->
     <property name="jobExecutorActivate" value="false" />
