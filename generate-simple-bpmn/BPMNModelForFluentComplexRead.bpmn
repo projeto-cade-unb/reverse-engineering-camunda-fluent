@@ -11,7 +11,7 @@
       <bpmn:outgoing>Flow_0kgrvty</bpmn:outgoing>
     </bpmn:startEvent>
     <bpmn:sequenceFlow id="Flow_0kgrvty" sourceRef="StartEvent" targetRef="TaskTeacher" />
-    <bpmn:userTask id="TaskTeacher" name="Teacher informs student&#39;s grade">
+    <bpmn:userTask id="TaskTeacher" name="Teacher informs student&#39;s grade.">
       <bpmn:documentation>showSimple</bpmn:documentation>
       <bpmn:extensionElements>
         <camunda:properties>

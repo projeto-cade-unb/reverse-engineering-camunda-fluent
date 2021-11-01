@@ -33,10 +33,6 @@ public class CreateSimpleBPMNProcessTest {
 
 	@Test
 	public void testCreateInvoiceProcess() throws Exception {
-
-		
-		
-		
 		///BpmnModelInstance modelInstance = Bpmn.readModelFromFile(new File("BPMNModelForFluentRead.bpmn"));
 
 		///ParallelGateway gateway = (ParallelGateway) modelInstance.getModelElementById("gateway");
@@ -91,6 +87,8 @@ public class CreateSimpleBPMNProcessTest {
 		// deploy process model
 		processEngine.getRepositoryService().createDeployment().addModelInstance("BPMNModelForFluentSimpleWrite.bpmn",
 		simpleModel).deploy();
+		
+		
 		
 		// start process model
 		//processEngine.getRuntimeService().startProcessInstanceByKey("BPMNModelForFluentSimpleModelRead");
