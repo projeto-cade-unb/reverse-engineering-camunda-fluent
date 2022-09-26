@@ -10,6 +10,7 @@ import org.camunda.bpm.engine.test.ProcessEngineRule;
 import org.camunda.bpm.model.bpmn.Bpmn;
 import org.camunda.bpm.model.bpmn.BpmnModelInstance;
 import org.camunda.bpm.model.bpmn.GatewayDirection;
+import org.camunda.bpm.model.bpmn.builder.UserTaskBuilder;
 import org.camunda.bpm.model.bpmn.instance.Documentation;
 import org.camunda.bpm.model.bpmn.instance.EndEvent;
 
@@ -28,6 +29,9 @@ import org.junit.Test;
 
 public class CreateSimpleBPMNProcessTest {
 
+	private UserTaskBuilder userTaskBuilder;
+	private Object object;
+	private BpmnModelInstance bpmnModelInstance;
 	@Rule
 	public ProcessEngineRule processEngine = new ProcessEngineRule();
 
@@ -51,8 +55,8 @@ public class CreateSimpleBPMNProcessTest {
 		// ---------------------- Complex to Simple BPMN ----------------------------------------
 		
 		BpmnModelInstance complexModel = Bpmn.readModelFromFile(new File("BPMNModelForFluentComplexRead.bpmn"));
-		BpmnModelInstance simpleModel =  Bpmn.readModelFromFile(new File("BPMNModelForFluentSimpleModelRead.bpmn")); 
-				
+		BpmnModelInstance simpleModel =  Bpmn.readModelFromFile(new File("BPMNModelForFluentSimpleModelRead.bpmn"));
+
 		StartEvent start = complexModel.getModelElementById("StartEvent");
 		Collection<Documentation> docStart = start.getDocumentations();
 		String showStart = docStart.iterator().next().getTextContent();
@@ -87,7 +91,6 @@ public class CreateSimpleBPMNProcessTest {
 		// deploy process model
 		processEngine.getRepositoryService().createDeployment().addModelInstance("BPMNModelForFluentSimpleWrite.bpmn",
 		simpleModel).deploy();
-		
 		
 		
 		// start process model

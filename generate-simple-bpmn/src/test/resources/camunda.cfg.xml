@@ -25,7 +25,7 @@
 
 <!-- H2 camunda 7.16 -->    
 <!-- 7.16 RUN    <property name="jdbcUrl" value="jdbc:h2:/opt/camundaUso/7.16/camunda-bpm-run-7.16.0/camunda-h2-default/process-engine;TRACE_LEVEL_FILE=0;DB_CLOSE_ON_EXIT=FALSE" />  -->
-    <property name="jdbcUrl" value="jdbc:h2:/opt/camundaUso/7.16/camunda-bpm-tomcat-7.16.0/camunda-h2-dbs/process-engine;TRACE_LEVEL_FILE=0;DB_CLOSE_ON_EXIT=FALSE" />
+    <property name="jdbcUrl" value="jdbc:h2:/opt/camundaUso/cade/camunda-h2-dbs/process-engine;TRACE_LEVEL_FILE=0;DB_CLOSE_ON_EXIT=FALSE" />
     <property name="jdbcDriver" value="org.h2.Driver" />
     <property name="jdbcUsername" value="sa" />
     <property name="jdbcPassword" value="sa" />

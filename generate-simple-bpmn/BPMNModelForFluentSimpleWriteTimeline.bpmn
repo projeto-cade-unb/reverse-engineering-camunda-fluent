@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:bioc="http://bpmn.io/schema/bpmn/biocolor/1.0" xmlns:camunda="http://camunda.org/schema/1.0/bpmn" id="Definitions_00i5kw0" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="4.8.1">
+  <bpmn:process id="BpmnModelForFluentSimpleRead" name="BPMN Model for Fluent Complex Read" isExecutable="true">
+    <bpmn:startEvent id="StartEvent" name="Start Process">
+      <bpmn:documentation>show</bpmn:documentation>
+      <bpmn:extensionElements>
+        <camunda:properties>
+          <camunda:property name="showSimple" value="True" />
+        </camunda:properties>
+      </bpmn:extensionElements>
+      <bpmn:outgoing>Flow_0kgrvty</bpmn:outgoing>
+    </bpmn:startEvent>
+    <bpmn:sequenceFlow id="Flow_0kgrvty" sourceRef="StartEvent" targetRef="TaskTeacher" />
+    <bpmn:userTask id="TaskTeacher" name="Teacher informs student&#39;s grade.">
+      <bpmn:documentation>showSimple</bpmn:documentation>
+      <bpmn:extensionElements>
+        <camunda:properties>
+          <camunda:property name="showSimple" value="True" />
+          <camunda:property name="showSimpleName" value="Informs student&#39;s grade" />
+          <camunda:property name="showSimpleDocumentation" value="Sample Documentation Simple" />
+        </camunda:properties>
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_0kgrvty</bpmn:incoming>
+      <bpmn:outgoing>Flow_0fhdfc1</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:endEvent id="EndEvent" name="End Process">
+      <bpmn:extensionElements>
+        <camunda:properties>
+          <camunda:property name="showSimple" value="True" />
+        </camunda:properties>
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_10jgzjp</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:sequenceFlow id="Flow_0fhdfc1" sourceRef="TaskTeacher" targetRef="approvedStudentTask">
+      <bpmn:extensionElements>
+        <camunda:properties>
+          <camunda:property name="showSimple" value="True" />
+        </camunda:properties>
+      </bpmn:extensionElements>
+    </bpmn:sequenceFlow>
+    <bpmn:userTask id="approvedStudentTask" name="Approved student">
+      <bpmn:documentation>show</bpmn:documentation>
+      <bpmn:extensionElements>
+        <camunda:properties>
+          <camunda:property name="showSimple" value="True" />
+        </camunda:properties>
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_0fhdfc1</bpmn:incoming>
+      <bpmn:outgoing>Flow_1yqp1f2</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:sequenceFlow id="Flow_1yqp1f2" sourceRef="approvedStudentTask" targetRef="ConfirmGraduationDate">
+      <bpmn:extensionElements>
+        <camunda:properties>
+          <camunda:property name="showSimple" value="True" />
+        </camunda:properties>
+      </bpmn:extensionElements>
+    </bpmn:sequenceFlow>
+    <bpmn:sequenceFlow id="Flow_10jgzjp" sourceRef="ConfirmGraduationDate" targetRef="EndEvent">
+      <bpmn:extensionElements>
+        <camunda:properties>
+          <camunda:property name="showSimple" value="True" />
+        </camunda:properties>
+      </bpmn:extensionElements>
+    </bpmn:sequenceFlow>
+    <bpmn:userTask id="ConfirmGraduationDate" name="Confirm Graduation Date">
+      <bpmn:documentation>show</bpmn:documentation>
+      <bpmn:extensionElements>
+        <camunda:properties>
+          <camunda:property name="showSimple" value="True" />
+        </camunda:properties>
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_1yqp1f2</bpmn:incoming>
+      <bpmn:outgoing>Flow_10jgzjp</bpmn:outgoing>
+    </bpmn:userTask>
+  </bpmn:process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_1">
+    <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="BpmnModelForFluentSimpleRead">
+      <bpmndi:BPMNEdge id="Flow_10jgzjp_di" bpmnElement="Flow_10jgzjp" bioc:stroke="rgb(30, 136, 229)" bioc:fill="rgb(187, 222, 251)">
+        <di:waypoint x="210" y="450" />
+        <di:waypoint x="210" y="492" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1yqp1f2_di" bpmnElement="Flow_1yqp1f2" bioc:stroke="rgb(30, 136, 229)" bioc:fill="rgb(187, 222, 251)">
+        <di:waypoint x="210" y="330" />
+        <di:waypoint x="210" y="370" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0fhdfc1_di" bpmnElement="Flow_0fhdfc1" bioc:stroke="rgb(30, 136, 229)" bioc:fill="rgb(187, 222, 251)">
+        <di:waypoint x="210" y="220" />
+        <di:waypoint x="210" y="250" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0kgrvty_di" bpmnElement="Flow_0kgrvty" bioc:stroke="rgb(30, 136, 229)" bioc:fill="rgb(187, 222, 251)">
+        <di:waypoint x="210" y="98" />
+        <di:waypoint x="210" y="140" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="_BPMNShape_StartEvent_2" bpmnElement="StartEvent" bioc:stroke="rgb(30, 136, 229)" bioc:fill="rgb(187, 222, 251)">
+        <dc:Bounds x="192" y="62" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="176" y="38" width="67" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_0nvh1f1_di" bpmnElement="TaskTeacher" bioc:stroke="rgb(30, 136, 229)" bioc:fill="rgb(187, 222, 251)">
+        <dc:Bounds x="160" y="140" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_1vi3bnj_di" bpmnElement="EndEvent" bioc:stroke="rgb(30, 136, 229)" bioc:fill="rgb(187, 222, 251)">
+        <dc:Bounds x="192" y="492" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="178" y="533" width="63" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_0754v9g_di" bpmnElement="approvedStudentTask" bioc:stroke="rgb(30, 136, 229)" bioc:fill="rgb(187, 222, 251)">
+        <dc:Bounds x="160" y="250" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_0ckg0tq_di" bpmnElement="ConfirmGraduationDate" bioc:stroke="rgb(30, 136, 229)" bioc:fill="rgb(187, 222, 251)">
+        <dc:Bounds x="160" y="370" width="100" height="80" />
+      </bpmndi:BPMNShape>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn:definitions>
